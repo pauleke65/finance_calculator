@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Financial Plan Calculator</title>
+  <!-- Add any CSS styling here -->
+</head>
+<body>
+  <h1>Financial Plan Calculator</h1>
+  <form action="/calculate" method="POST">
+    <label for="amount">Enter the one-time amount:</label>
+    <input type="text" name="amount" required><br>
+
+    <label for="debt">Enter the debt amount:</label>
+    <input type="text" name="debt" required><br>
+
+    <label for="digital">Is it digital?</label>
+    <input type="checkbox" name="digital"><br>
+
+    <button type="submit">Calculate</button>
+  </form>
+</body>
+</html>

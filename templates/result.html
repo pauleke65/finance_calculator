@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Financial Plan Results</title>
+  <!-- Add any CSS styling here -->
+</head>
+<body>
+  <h1>Financial Plan Results</h1>
+
+  <h2>Budget Allocations:</h2>
+  <ul>
+    {% for category, amount in budget.items() %}
+    <li>{{ category }}: GH₵{{ amount }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Remaining Balance:</h2>
+  <p>GH₵{{ remaining_balance }}</p>
+</body>
+</html>
