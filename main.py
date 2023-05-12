@@ -45,7 +45,7 @@ def calculate():
     debt_amount = float(request.form['debt'])
     is_digital = request.form.get('digital', False)
 
-    budget, remaining_balance = calculate_budget(one_time_amount, debt_amount, is_digital=is_digital)
+    budget, remaining_balance = calculate_budget(one_time_amount, debt_amount, is_digital)
 
     return render_template('result.html', budget=budget, remaining_balance=remaining_balance)
 
