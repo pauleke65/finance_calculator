@@ -10,7 +10,7 @@ app = APIFlask(__name__, title='Paul Imoke Digital Life API')
 
 app.servers = [
     {
-        'url': 'http://127.0.0.1:5000' if AppSecrets.environment == 'dev' else 'http://api.paulimoke.com',
+        'url': 'http://127.0.0.1:5000' if AppSecrets.environment == 'dev' else 'https://api.paulimoke.com',
         'description': 'Server URL'
     }
 ]
