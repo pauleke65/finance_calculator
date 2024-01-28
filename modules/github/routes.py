@@ -1,5 +1,3 @@
-from flasgger import swag_from
-from flask import jsonify
 
 from modules.github.schema import GithubIssuesOut
 
