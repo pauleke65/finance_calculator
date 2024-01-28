@@ -1,4 +1,9 @@
-auth = Auth.Token(github_access_token)
+from github import Github
+from github import Auth
+
+from app_secrets import AppSecrets
+
+auth = Auth.Token(AppSecrets.github_access_token)
 
 # Public Web Github
-g = Github(auth=auth)
+git_auth = Github(auth=auth)
