@@ -17,10 +17,10 @@ app.servers = [
 
 
 @app.get('/')
-@app.doc(operation_id='SayHello', tags=['Home'])
+@app.doc(operation_id='SayGoodBye', tags=['Home'])
 def say_hello():
     # returning a dict or list equals to use jsonify()
-    return {'message': 'Hello!'}
+    return {'message': 'GoodBye Boi!'}
 
 
 github_routes(app)
