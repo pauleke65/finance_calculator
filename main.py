@@ -111,6 +111,7 @@ class PetOut(Schema):
 
 
 @app.get('/')
+@app.doc(operation_id='SayHello')
 def say_hello():
     # returning a dict or list equals to use jsonify()
     return {'message': 'Hello!'}
@@ -118,6 +119,7 @@ def say_hello():
 
 @app.get('/pets/<int:pet_id>')
 @app.output(PetOut)
+@app.doc(responses={404: {'description': 'Pet not found'}}, operation_id='GetPet')
 def get_pet(pet_id):
     if pet_id > len(pets) - 1:
         abort(404)
@@ -128,6 +130,7 @@ def get_pet(pet_id):
 
 @app.get('/pets')
 @app.output(PetOut(many=True))
+@app.doc(operation_id='GetPets')
 def get_pets():
     return pets
 
@@ -135,6 +138,7 @@ def get_pets():
 @app.patch('/pets/<int:pet_id>')
 @app.input(PetIn(partial=True))  # -> json_data
 @app.output(PetOut)
+@app.doc(responses={404: {'description': 'Pet not found'}}, operation_id='UpdatePet')
 def update_pet(pet_id, json_data):
     # the validated and parsed input data will
     # be injected into the view function as a dict
